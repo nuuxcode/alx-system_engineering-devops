@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -printf "%P\n" | tail -n 10 | tac
+find . -type f -printf "%P\n" | tail -n 10 | sort -r
