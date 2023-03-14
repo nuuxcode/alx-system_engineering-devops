@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "hello $(whoami)"
+echo "hello $(id | cut -d '(' -f 2 | cut -d ')' -f 1)"
