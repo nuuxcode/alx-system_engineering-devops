@@ -3,9 +3,9 @@
 counter=0
 while ((counter++<10)); do
     if [[ $counter -eq 8 ]]; then
-        echo "bad luck"
-    elif [[ $counter -eq 4 ]]; then
         echo "good luck"
+    elif [[ $counter -eq 4 ]]; then
+        echo "bad luck"
     else
         echo "Best School"
     fi
