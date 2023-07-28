@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+for file in *; do
+    echo "${file#*-}"
+done
