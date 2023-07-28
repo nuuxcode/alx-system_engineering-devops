@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+counter=0
+while ((counter++<20)); do
+    echo $counter
+    case $counter in
+        4) echo "bad luck from China";;
+        9) echo "bad luck from Japan";;
+        17) echo "bad luck from Italy";;
+    esac
+done
