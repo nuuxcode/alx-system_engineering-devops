@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script
+file_name="7-highlander"
+pids=$(pgrep -f "$file_name")
+if [ -n "$pids" ]; then
+  kill -9 "$pids"
+fi
