@@ -2,12 +2,12 @@
 # This script is displaying "Best School" 10 times
 counter=0
 while ((counter++<100)); do
-    if (( counter % 3 == 0 )); then
+    if (( counter % 3 == 0 && counter % 5 == 0 )); then
+        echo "FizzBuzz"
+    elif (( counter % 3 == 0 )); then
         echo "Fizz"
     elif (( counter % 5 == 0 )); then
         echo "Buzz"
-    elif (( counter % 3 == 0 && counter % 5 == 0 )); then
-        echo "FizzBuzz"
     else
         echo $counter
     fi
