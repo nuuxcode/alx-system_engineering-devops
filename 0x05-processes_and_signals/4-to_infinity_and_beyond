@@ -2,6 +2,6 @@
 # This script
 while :
 do
-    echo "Best School"
+    echo "To infinity and beyond"
     sleep 2
 done
