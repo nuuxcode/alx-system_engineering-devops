@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script
+file_name="4-to_infinity_and_beyond"
+pkill -f $file_name
