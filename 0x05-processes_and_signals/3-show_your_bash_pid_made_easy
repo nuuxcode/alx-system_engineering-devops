@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script
+for pid in /proc/[0-9]*; do
+  name=$(cat "$pid/comm" 2>/dev/null)
+  pid=$(basename "$pid")
+  if [[ "$name" == *"bash"* ]]; then
+    echo "$pid $name"
+  fi
+done
