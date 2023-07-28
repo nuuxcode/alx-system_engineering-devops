@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script
+while :
+do
+    echo "Best School"
+    sleep 2
+done
