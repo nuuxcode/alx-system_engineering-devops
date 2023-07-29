@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script
+file_name="100-process_and_pid_file"
+pids=$(pgrep -f "$file_name")
+if [ -n "$pids" ]; then
+  kill -3 "$pids"
+fi

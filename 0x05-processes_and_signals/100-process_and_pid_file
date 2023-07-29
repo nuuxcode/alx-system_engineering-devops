@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script
+sudo sh -c 'echo $$ > /var/run/myscript.pid'
+trap 'echo "I hate the kill command";sudo rm -f /var/run/myscript.pid;exit 0' SIGTERM
+trap 'sudo rm -f /var/run/myscript.pid;exit 0' SIGQUIT 
+trap 'echo "Y U no love me?!";exit 0' SIGINT
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
