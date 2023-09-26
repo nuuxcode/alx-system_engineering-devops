@@ -12,9 +12,7 @@ USERNAME="$3"
 PRIVATE_KEY="$4"
 
 if [ -f $PRIVATE_KEY ]; then
-    echo "there no private key"
     scp -o StrictHostKeyChecking=no "$LOCAL_FILE" "$USERNAME@$IP":~/
 else
-    echo "im using private key"
     scp -o StrictHostKeyChecking=no -i "$PRIVATE_KEY" "$LOCAL_FILE" "$USERNAME@$IP":~/
 fi
