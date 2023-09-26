@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# run appache
 sudo service appache2 start
