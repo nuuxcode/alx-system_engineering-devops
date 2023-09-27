@@ -9,8 +9,7 @@ LOCAL_FILE=$1
 IP=$2
 USERNAME=$3
 PRIVATE_KEY=$4
-
-if [ -f $PRIVATE_KEY ]; then
+if [ $# -eq 3 ]; then
     scp -o StrictHostKeyChecking=no "$LOCAL_FILE" "$USERNAME@$IP":~/
 else
     scp -o StrictHostKeyChecking=no -i "$PRIVATE_KEY" "$LOCAL_FILE" "$USERNAME@$IP":~/
