@@ -1,13 +1,16 @@
-# Install nginx with puppet
-package { 'nginx':
-  ensure => 'installed',
+# instal and configure nginx
+exec {'update':
+  command => '/usr/bin/apt-get update',
 }
-
-exec { 'append_add_header':
-  command => '/usr/bin/sed -i "0,/location \/ {/s/location \/ {/&\n\t\tadd_header X-Served-By $HOSTNAME;/" /etc/nginx/sites-available/default',
+-> package { 'nginx':
+  ensure => installed,
 }
-service { 'nginx':
-  ensure  => 'running',
-  enable  => true,
-  require => Package['nginx'],
+-> file_line { 'header_served_by':
+  path  => '/etc/nginx/sites-available/default',
+  match => '^server {',
+  line  => "server {\n\tadd_header X-Served-By \"${hostname}\";",
+  multiple => false,
+}
+-> exec {'run':
+  command => '/usr/sbin/service nginx restart',
 }
