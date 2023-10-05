@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# im comment :)
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
