@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# im comment :)
+sudo python3 -m http.server 80 --directory /usr/share/nginx/html
+sudo service nginx stop
