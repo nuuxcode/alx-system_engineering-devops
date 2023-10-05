@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Double the number of webservers
+
+if [ "$#" -eq 1 ]; then
+    echo "$(dig www.$1 | awk '/ANSWER SECTION:/ {getline; print "The subdomain www is a "$4" record and points to "$5}')"
+    echo "$(dig lb-01.$1 | awk '/ANSWER SECTION:/ {getline; print "The subdomain lb-01 is a "$4" record and points to "$5}')"
+    echo "$(dig web-01.$1 | awk '/ANSWER SECTION:/ {getline; print "The subdomain web-01 is a "$4" record and points to "$5}')"
+    echo "$(dig web-02.$1 | awk '/ANSWER SECTION:/ {getline; print "The subdomain web-02 is a "$4" record and points to "$5}')"
+elif [ "$#" -eq 2 ]; then
+    subdomain=$2
+    echo "$(dig $subdomain.$1 | awk '/ANSWER SECTION:/ {getline; print "The subdomain '"$subdomain"' is a "$4" record and points to "$5}')"
+fi
