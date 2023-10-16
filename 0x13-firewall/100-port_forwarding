@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Double the number of webservers
+
+echo "*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT" | sudo tee -a "/etc/ufw/before.rules"
+sudo ufw reload
+sudo iptables -t nat -L -n -v | grep 8080
