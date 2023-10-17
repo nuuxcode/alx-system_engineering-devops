@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # MySQL backup
 
 mysqldump -u root -p"$1" --all-databases > backup.sql
