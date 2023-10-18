@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engineering-devops/master/scripts/mysql57 && chmod +x mysql57 && ./mysql57
+# sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engineering-devops/master/scripts/mysql57 && sudo chmod +x mysql57 && sudo ./mysql57
 sudo wget -O mysql-apt-config_0.8.12-1_all.deb https://dev.mysql.com/get/mysql-apt-config_0.8.12-1_all.deb
 echo "mysql-apt-config mysql-apt-config/select-server select mysql-5.7" | sudo debconf-set-selections
 echo "mysql-apt-config mysql-apt-config/select-server-5.7 select bionic" | sudo debconf-set-selections
