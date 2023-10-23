@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ module doc """
+import json
 import requests
 import sys
-import json
 
 
 def main():
