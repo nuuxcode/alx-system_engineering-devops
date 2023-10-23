@@ -14,6 +14,7 @@ def main():
     notDone = f'{todos}&completed=false'
     userData = requests.get(f'{url}{users}').json()
     Name = userData[0].get("name")
+    userName = userData[0].get("username")
     todosData = requests.get(f'{url}{todos}').json()
     todosDone = requests.get(f'{url}{done}').json()
     doneN = len(todosDone)
@@ -21,7 +22,9 @@ def main():
     """Export into csv"""
     with open(f'{id}.csv', 'w') as f:
         for todo in todosData:
-            f.write(f'"{id}","{Name}","{todo.get("completed")}","{todo.get("title")}"\n')
+            data = f'"{id}","{userName}","{todo.get("completed")}",'
+            data2 = f'"{todo.get("title")}"\n'
+            f.write(data+data2)
 
 
 if __name__ == "__main__":
