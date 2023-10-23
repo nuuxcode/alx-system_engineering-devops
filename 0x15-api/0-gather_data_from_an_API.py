@@ -20,7 +20,7 @@ def main():
     totalN = len(todosData)
     print(f'Employee {Name} is done with tasks({doneN}/{totalN}):')
     for task in todosDone:
-        print("\t"+task.get("title"))
+        print("\t "+task.get("title"))
 
 
 if __name__ == "__main__":
