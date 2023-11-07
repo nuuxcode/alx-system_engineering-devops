@@ -23,5 +23,4 @@ def recurse(subreddit, after=None):
         next = recurse(subreddit, after)
         all_posts.extend(next)
         return all_posts
-    else:
-        return None
+    return None
