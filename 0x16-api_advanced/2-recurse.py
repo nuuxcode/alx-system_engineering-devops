@@ -16,7 +16,7 @@ def recurse(subreddit, after=None):
     if response.status_code == 200:
         data = response.json()
         for post in data["data"]["children"]:
-            all_posts.append(post)
+            all_posts.append(post["data"]["title"])
         after = data["data"]["after"]
         if after is None:
             return all_posts
