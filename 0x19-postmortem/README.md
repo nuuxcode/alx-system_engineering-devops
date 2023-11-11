@@ -1,5 +1,7 @@
 # Postmortem: Unexpected Downtime on Web Service
 
+![G9gCNQQ](https://github.com/nuuxcode/alx-system_engineering-devops/assets/24565896/8ad5fb26-f1be-4871-b51b-6c41e28fbb54)
+
 ## Issue Summary
 
 - **Duration:**
