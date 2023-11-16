@@ -2,5 +2,5 @@
 # No service interruption
 
 if pgrep -f "gunicorn" > /dev/null; then
-    kill -HUP $(pgrep -f "gunicorn")
+    kill -HUP "$(pgrep -f "gunicorn")"
 fi
