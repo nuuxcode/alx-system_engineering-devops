@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# No service interruption
+
+if pgrep -f "gunicorn" > /dev/null; then
+    kill -HUP $(pgrep -f "gunicorn")
+fi
