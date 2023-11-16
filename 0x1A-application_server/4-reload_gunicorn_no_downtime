@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # No service interruption
 
-kill -HUP "$(ps -C gunicorn fch -o pid | head -n 1)"
+pkill -HUP gunicorn
