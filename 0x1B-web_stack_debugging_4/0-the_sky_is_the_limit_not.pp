@@ -2,11 +2,9 @@
 exec { 'update ulimit':
   command => "sed -i 's/^ULIMIT=.*/ULIMIT=\"-n 15000\"/' /etc/default/nginx",
   path    => ['/bin', '/usr/bin'],
-  notify  => Exec['restart_nginx'],
 }
 
-exec { 'restart_nginx':
-  command     => 'service nginx restart',
-  refreshonly => true,
-  path        => ['/bin', '/usr/bin'],
+-> exec { 'restart':
+  command => 'service nginx restart',
+  path    => ['/bin', '/usr/bin'],
 }
